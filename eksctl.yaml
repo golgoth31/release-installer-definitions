@@ -6,10 +6,16 @@ metadata:
 spec:
   url: https://github.com/weaveworks/eksctl/releases/download/{{ .Version }}
   file:
-    archive: eksctl_{{ .O }}_{{ .Arch }}.tar.gz
+    archive: eksctl_{{ .Os }}_{{ .Arch }}.tar.gz
     binaryPath: "."
     binary: eksctl
+    dstbinary: eksctl
   checksum:
     url: https://github.com/weaveworks/eksctl/releases/download/{{ .Version }}
     file: eksctl_checksums.txt
     format: sha256
+  available:
+    os:
+      linux: linux
+    arch:
+      amd64: amd64
