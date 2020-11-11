@@ -6,10 +6,10 @@ metadata:
 spec:
   url: https://github.com/istio/istio/releases/download/{{ .Version }}
   file:
-    archive: istioctl-{{ .Version }}-{{ .Os }}-{{ .Arch }}.tar.gz
+    src: istioctl-{{ .Version }}-{{ .Os }}-{{ .Arch }}.tar.gz
     binaryPath: "."
     binary: istioctl
-    dstbinary: istioctl
+    mode: archive
   checksum:
     url: https://github.com/istio/istio/releases/download/{{ .Version }}
     file: istioctl-{{ .Version }}-{{ .Os }}-{{ .Arch }}.tar.gz.sha256

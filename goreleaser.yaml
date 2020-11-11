@@ -6,10 +6,10 @@ metadata:
 spec:
   url: https://github.com/goreleaser/goreleaser/releases/download/v{{ .Version }}
   file:
-    archive: goreleaser_{{ .Os }}_{{ .Arch }}.tar.gz
+    src: goreleaser_{{ .Os }}_{{ .Arch }}.tar.gz
     binaryPath: "."
     binary: goreleaser
-    dstbinary: goreleaser
+    mode: archive
   checksum:
     url: https://github.com/goreleaser/goreleaser/releases/download/v{{ .Version }}
     file: goreleaser_checksums.txt

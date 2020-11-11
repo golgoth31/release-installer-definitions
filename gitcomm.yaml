@@ -6,10 +6,10 @@ metadata:
 spec:
   url: https://github.com/karantin2020/gitcomm/releases/download/v{{ .Version }}
   file:
-    archive: gitcomm_{{ .Os }}_{{ .Arch }}
+    src: gitcomm_{{ .Os }}_{{ .Arch }}
     binaryPath: "."
-    binary: gitcomm_{{ .Os }}_{{ .Arch }}
-    dstbinary: gitcomm
+    binary: gitcomm
+    mode: file
   checksum: {}
   available:
     os:
