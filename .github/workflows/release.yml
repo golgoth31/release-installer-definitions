@@ -1,0 +1,23 @@
+on:
+  push:
+    branches:
+      - main
+
+name: Release
+jobs:
+  release:
+    name: Build and release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code into the Go module directory
+        uses: actions/checkout@v2
+      - name: Archive definitions
+        run: |
+          tar czvf ri-releases-definitions.tar.gz releases
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            ri-releases-definitions.tar.gz
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
