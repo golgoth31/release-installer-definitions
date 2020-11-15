@@ -4,8 +4,12 @@ metadata:
   name: terraform
   web: https://terraform.io/
 spec:
-  url: https://releases.hashicorp.com/terraform/{{ .Version }}
+  repo:
+    type: github
+    name: terraform
+    owner: hashicorp
   file:
+    url: https://releases.hashicorp.com/terraform/{{ .Version }}
     src: terraform_{{ .Version }}_{{ .Os }}_{{ .Arch }}.zip
     binaryPath: "."
     binary: terraform

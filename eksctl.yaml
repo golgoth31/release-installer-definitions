@@ -4,8 +4,12 @@ metadata:
   name: eksctl
   web: https://eksctl.io/
 spec:
-  url: https://github.com/weaveworks/eksctl/releases/download/{{ .Version }}
+  repo:
+    type: github
+    name: eksctl
+    owner: weaveworks
   file:
+    url: https://github.com/weaveworks/eksctl/releases/download/{{ .Version }}
     src: eksctl_{{ .Os }}_{{ .Arch }}.tar.gz
     binaryPath: "."
     binary: eksctl

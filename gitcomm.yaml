@@ -4,8 +4,12 @@ metadata:
   name: gitcomm
   web: https://github.com/karantin2020/gitcomm
 spec:
-  url: https://github.com/karantin2020/gitcomm/releases/download/v{{ .Version }}
+  repo:
+    type: github
+    name: gitcomm
+    owner: karantin2020
   file:
+    url: https://github.com/karantin2020/gitcomm/releases/download/{{ .Version }}
     src: gitcomm_{{ .Os }}_{{ .Arch }}
     binaryPath: "."
     binary: gitcomm

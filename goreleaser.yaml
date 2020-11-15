@@ -4,14 +4,18 @@ metadata:
   name: goreleaser
   web: https://goreleaser.com/
 spec:
-  url: https://github.com/goreleaser/goreleaser/releases/download/v{{ .Version }}
+  repo:
+    type: github
+    name: goreleaser
+    owner: goreleaser
   file:
+    url: https://github.com/goreleaser/goreleaser/releases/download/{{ .Version }}
     src: goreleaser_{{ .Os }}_{{ .Arch }}.tar.gz
     binaryPath: "."
     binary: goreleaser
     mode: archive
   checksum:
-    url: https://github.com/goreleaser/goreleaser/releases/download/v{{ .Version }}
+    url: https://github.com/goreleaser/goreleaser/releases/download/{{ .Version }}
     file: goreleaser_checksums.txt
     format: sha256
   available:

@@ -4,8 +4,12 @@ metadata:
   name: helm
   web: https://helm.sh/
 spec:
-  url: https://get.helm.sh
+  repo:
+    type: github
+    name: helm
+    owner: helm
   file:
+    url: https://get.helm.sh
     src: helm-v{{ .Version }}-{{ .Os }}-{{ .Arch }}.tar.gz
     binaryPath: "{{ .Os }}-{{ .Arch }}"
     binary: helm

@@ -4,8 +4,12 @@ metadata:
   name: istioctl
   web: https://istio.io/
 spec:
-  url: https://github.com/istio/istio/releases/download/{{ .Version }}
+  repo:
+    type: github
+    name: istio
+    owner: istio
   file:
+    url: https://github.com/istio/istio/releases/download/{{ .Version }}
     src: istioctl-{{ .Version }}-{{ .Os }}-{{ .Arch }}.tar.gz
     binaryPath: "."
     binary: istioctl
