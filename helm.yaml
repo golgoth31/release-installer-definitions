@@ -10,13 +10,13 @@ spec:
     owner: helm
   file:
     url: https://get.helm.sh
-    src: helm-v{{ .Version }}-{{ .Os }}-{{ .Arch }}.tar.gz
+    src: helm-{{ .Version }}-{{ .Os }}-{{ .Arch }}.tar.gz
     binaryPath: "{{ .Os }}-{{ .Arch }}"
     binary: helm
     mode: archive
   checksum:
     url: https://get.helm.sh
-    file: helm-v{{ .Version }}-{{ .Os }}-{{ .Arch }}.tar.gz.sha256sum
+    file: helm-{{ .Version }}-{{ .Os }}-{{ .Arch }}.tar.gz.sha256sum
     format: sha256
   available:
     os:

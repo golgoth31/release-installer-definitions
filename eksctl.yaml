@@ -20,6 +20,6 @@ spec:
     format: sha256
   available:
     os:
-      linux: linux
+      linux: Linux
     arch:
       amd64: amd64
