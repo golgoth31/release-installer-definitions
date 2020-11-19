@@ -1,0 +1,23 @@
+apiVersion: release/v1
+kind: Release
+metadata:
+  name: kubectl-argo-rollouts
+  web: https://github.com/argoproj/argo-rollouts
+spec:
+  repo:
+    type: github
+    name: argo-rollouts
+    owner: argoproj
+  file:
+    url: https://github.com/argoproj/argo-rollouts/releases/download/{{ .Version }}
+    src: kubectl-argo-rollouts-{{ .Os }}-{{ .Arch }}
+    binaryPath: "."
+    binary: kubectl-argo-rollouts
+    mode: file
+  checksum: {}
+  available:
+    os:
+      linux: linux
+      darwin: darwin
+    arch:
+      amd64: amd64
