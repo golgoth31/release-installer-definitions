@@ -1,0 +1,23 @@
+apiVersion: release/v1
+kind: Release
+metadata:
+  name: github-cli
+  web: https://istio.io/
+spec:
+  repo:
+    type: github
+    name: cli
+    owner: cli
+  file:
+    url: https://github.com/cli/cli/releases/download/{{ .Version }}
+    src: gh_{{ trimPrefix "v" .Version }}_{{ .Os }}_{{ .Arch }}.tar.gz
+    binaryPath: gh_{{ trimPrefix "v" .Version }}_{{ .Os }}_{{ .Arch }}/bin
+    binary: gh
+    mode: archive
+  checksum:
+    url: https://github.com/cli/cli/releases/download/{{ .Version }}
+    file: gh_{{ trimPrefix "v" .Version }}_checksums.txt
+    format: sha256
+  available:
+    os:
+      darwin: macOS
