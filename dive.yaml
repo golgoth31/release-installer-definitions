@@ -18,3 +18,11 @@ spec:
     url: https://github.com/wagoodman/dive/releases/download/{{ .Version }}
     file: dive_{{ trimPrefix "v" .Version }}_checksums.txt
     format: sha256
+  available:
+    os:
+      linux: linux
+      darwin: darwin
+      windows: windows
+    arch:
+      amd64: amd64
+      arm64: arm64
