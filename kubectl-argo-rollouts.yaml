@@ -14,7 +14,8 @@ spec:
     binaryPath: "."
     binary: kubectl-argo-rollouts
     mode: file
-  checksum: {}
+  checksum:
+    check: false
   available:
     os:
       linux: linux

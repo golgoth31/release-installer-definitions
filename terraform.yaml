@@ -15,6 +15,7 @@ spec:
     binary: terraform
     mode: archive
   checksum:
+    check: true
     url: https://releases.hashicorp.com/terraform/{{ .Version }}
     file: terraform_{{ .Version }}_SHA256SUMS
     format: sha256

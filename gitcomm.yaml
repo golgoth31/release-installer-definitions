@@ -14,7 +14,8 @@ spec:
     binaryPath: "."
     binary: gitcomm
     mode: file
-  checksum: {}
+  checksum:
+    check: false
   available:
     os:
       linux: linux

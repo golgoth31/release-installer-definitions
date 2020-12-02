@@ -15,6 +15,7 @@ spec:
     binary: istioctl
     mode: archive
   checksum:
+    check: true
     url: https://github.com/istio/istio/releases/download/{{ .Version }}
     file: istioctl-{{ .Version }}-{{ .Os }}-{{ .Arch }}.tar.gz.sha256
     format: sha256

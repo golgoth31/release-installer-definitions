@@ -1,0 +1,29 @@
+apiVersion: release/v1
+kind: Release
+metadata:
+  name: skaffold
+  web: https://github.com/GoogleContainerTools/dive
+spec:
+  repo:
+    type: github
+    owner: GoogleContainerTools
+    name: skaffold
+  file:
+    url: https://github.com/GoogleContainerTools/skaffold/releases/download/{{ .Version }}
+    src: skaffold-{{ .Os }}-{{ .Arch }}
+    binaryPath: "."
+    binary: skaffold
+    mode: file
+  checksum:
+    check: false # can't be check due to bad checksum file format; to be fixed
+    url: https://github.com/GoogleContainerTools/skaffold/releases/download/{{ .Version }}
+    file: skaffold-{{ .Os }}_{{ .Arch }}.sha256
+    format: sha256
+  available:
+    os:
+      linux: linux
+      darwin: darwin
+      windows: windows
+    arch:
+      amd64: amd64
+      arm64: arm64
