@@ -1,0 +1,20 @@
+apiVersion: release/v1
+kind: Release
+metadata:
+  name: dive
+  web: https://github.com/wagoodman/dive
+spec:
+  repo:
+    type: github
+    name: wagoodman
+    owner: dive
+  file:
+    url: https://github.com/wagoodman/dive/releases/download/{{ .Version }}
+    src: dive_{{ trimPrefix "v" .Version }}_{{ .Os }}_{{ .Arch }}.tar.gz
+    binaryPath: "."
+    binary: dive
+    mode: archive
+  checksum:
+    url: https://github.com/wagoodman/dive/releases/download/{{ .Version }}
+    file: dive_{{ trimPrefix "v" .Version }}_checksums.txt
+    format: sha256
