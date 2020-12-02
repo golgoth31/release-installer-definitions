@@ -6,8 +6,8 @@ metadata:
 spec:
   repo:
     type: github
-    name: wagoodman
-    owner: dive
+    owner: wagoodman
+    name: dive
   file:
     url: https://github.com/wagoodman/dive/releases/download/{{ .Version }}
     src: dive_{{ trimPrefix "v" .Version }}_{{ .Os }}_{{ .Arch }}.tar.gz
