@@ -11,7 +11,7 @@ spec:
   file:
     url: https://github.com/stern/stern/releases/download/{{ .Version }}
     src: stern_{{ trimPrefix "v" .Version }}_{{ .Os }}_{{ .Arch }}.tar.gz
-    binaryPath: "."
+    binaryPath: stern_{{ trimPrefix "v" .Version }}_{{ .Os }}_{{ .Arch }}
     binary: stern
     mode: archive
   checksum:
