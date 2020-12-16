@@ -15,6 +15,7 @@ spec:
     binary: stern
     mode: archive
   checksum:
+    check: true
     url: https://github.com/stern/stern/releases/download/{{ .Version }}
     file: checksums.txt
     format: sha256
