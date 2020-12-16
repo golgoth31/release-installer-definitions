@@ -1,0 +1,26 @@
+apiVersion: release/v1
+kind: Release
+metadata:
+  name: stern
+  web: https://github.com/stern/stern
+spec:
+  repo:
+    type: github
+    name: stern
+    owner: stern
+  file:
+    url: https://github.com/stern/stern/releases/download/{{ .Version }}
+    src: stern_{{ trimPrefix "v" .Version }}_{{ .Os }}_{{ .Arch }}.tar.gz
+    binaryPath: "."
+    binary: stern
+    mode: archive
+  checksum:
+    url: https://github.com/stern/stern/releases/download/{{ .Version }}
+    file: checksums.txt
+    format: sha256
+  available:
+    os:
+      linux: linux
+      darwin: darwin
+    arch:
+      amd64: amd64
