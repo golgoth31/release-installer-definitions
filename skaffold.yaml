@@ -2,7 +2,7 @@ apiVersion: release/v1
 kind: Release
 metadata:
   name: skaffold
-  web: https://github.com/GoogleContainerTools/dive
+  web: https://github.com/GoogleContainerTools/skaffold
 spec:
   repo:
     type: github

@@ -1,0 +1,29 @@
+apiVersion: release/v1
+kind: Release
+metadata:
+  name: kustomize
+  web: https://kustomize.io/
+spec:
+  repo:
+    type: github
+    owner: kubernetes-sigs
+    name: kustomize
+  file:
+    url: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2F{{ .Version }}
+    src: kustomize_{{ .Version }}_{{ .Os }}_{{ .Arch }}
+    binaryPath: "."
+    binary: kustomize
+    mode: archive
+  checksum:
+    check: false # can't be check due to bad checksum file format; to be fixed
+    url: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2F{{ .Version }}
+    file: checksums.txt
+    format: sha256
+  available:
+    os:
+      linux: linux
+      darwin: darwin
+      windows: windows
+    arch:
+      amd64: amd64
+      arm64: arm64
