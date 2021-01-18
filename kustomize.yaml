@@ -10,7 +10,7 @@ spec:
     name: kustomize
   file:
     url: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2F{{ .Version }}
-    src: kustomize_{{ .Version }}_{{ .Os }}_{{ .Arch }}
+    src: kustomize_{{ .Version }}_{{ .Os }}_{{ .Arch }}.tar.gz
     binaryPath: "."
     binary: kustomize
     mode: archive
