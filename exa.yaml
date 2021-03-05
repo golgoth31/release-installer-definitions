@@ -1,0 +1,27 @@
+apiVersion: release/v1
+kind: Release
+metadata:
+  name: exa
+  web: https://the.exa.website/
+spec:
+  repo:
+    type: github
+    name: exa
+    owner: ogham
+  file:
+    url: https://github.com/ogham/exa/releases/download/{{ .Version }}
+    src: exa-{{ .Os }}-{{ .Arch }}-{{ trimPrefix "v" .Version }}.zip
+    binaryPath: "."
+    binary: exa-{{ .Os }}-{{ .Arch }}
+    link: exa
+    mode: archive
+  checksum:
+    check: false
+    url: https://github.com/ogham/exa/releases/download/{{ .Version }}
+    file: SHA1SUMS
+    format: sha1
+  available:
+    os:
+      linux: linux
+    arch:
+      amd64: x86_64

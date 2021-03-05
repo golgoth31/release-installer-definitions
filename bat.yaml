@@ -1,0 +1,26 @@
+apiVersion: release/v1
+kind: Release
+metadata:
+  name: bat
+  web: https://github.com/sharkdp/bat
+spec:
+  repo:
+    type: github
+    name: bat
+    owner: sharkdp
+  file:
+    url: https://github.com/sharkdp/bat/releases/download/{{ .Version }}
+    src: bat-{{ .Version }}-{{ .Arch }}-unknown-{{ .Os }}-gnu.tar.gz
+    binaryPath: "bat-{{ .Version }}-{{ .Arch }}-unknown-{{ .Os }}-gnu"
+    binary: bat
+    mode: archive
+  checksum:
+    check: false
+    url: https://github.com/sharkdp/bat/releases/download/{{ .Version }}
+    file: checksums.txt
+    format: sha256
+  available:
+    os:
+      linux: linux
+    arch:
+      amd64: x86_64

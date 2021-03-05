@@ -1,0 +1,26 @@
+apiVersion: release/v1
+kind: Release
+metadata:
+  name: ripgrep
+  web: https://github.com/BurntSushi/ripgrep
+spec:
+  repo:
+    type: github
+    name: ripgrep
+    owner: BurntSushi
+  file:
+    url: https://github.com/BurntSushi/ripgrep/releases/download/{{ .Version }}
+    src: ripgrep-{{ .Version }}-{{ .Arch }}-unknown-{{ .Os }}-musl.tar.gz
+    binaryPath: "ripgrep-{{ .Version }}-{{ .Arch }}-unknown-{{ .Os }}-musl"
+    binary: rg
+    mode: archive
+  checksum:
+    check: false
+    url: https://github.com/BurntSushi/ripgrep/releases/download/{{ .Version }}
+    file: checksums.txt
+    format: sha256
+  available:
+    os:
+      linux: linux
+    arch:
+      amd64: x86_64
