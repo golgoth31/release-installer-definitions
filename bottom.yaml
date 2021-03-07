@@ -1,0 +1,26 @@
+apiVersion: release/v1
+kind: Release
+metadata:
+  name: bottom
+  web: https://github.com/ClementTsang/bottom
+spec:
+  repo:
+    type: github
+    name: bottom
+    owner: ClementTsang
+  file:
+    url: https://github.com/ClementTsang/bottom/releases/download/{{ .Version }}
+    src: bottom_{{ .Arch }}-unknown-{{ .Os }}-gnu.tar.gz
+    binaryPath: "."
+    binary: btm
+    mode: archive
+  checksum:
+    check: false
+    url: https://github.com/ClementTsang/bottom/releases/download/{{ .Version }}
+    file: checksums.txt
+    format: sha256
+  available:
+    os:
+      linux: linux
+    arch:
+      amd64: x86_64

@@ -1,0 +1,26 @@
+apiVersion: release/v1
+kind: Release
+metadata:
+  name: bottom
+  web: https://github.com/imsnif/bandwhich
+spec:
+  repo:
+    type: github
+    name: bandwhich
+    owner: imsnif
+  file:
+    url: https://github.com/imsnif/bandwhich/releases/download/{{ .Version }}
+    src: bandwhich-v{{ .Version }}-{{ .Arch }}-unknown-{{ .Os }}-musl.tar.gz
+    binaryPath: "."
+    binary: bandwhich
+    mode: archive
+  checksum:
+    check: false
+    url: https://github.com/imsnif/bandwhich/releases/download/{{ .Version }}
+    file: checksums.txt
+    format: sha256
+  available:
+    os:
+      linux: linux
+    arch:
+      amd64: x86_64
