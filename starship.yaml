@@ -1,0 +1,26 @@
+apiVersion: release/v1
+kind: Release
+metadata:
+  name: starship
+  web: https://github.com/starship/starship
+spec:
+  repo:
+    type: github
+    name: starship
+    owner: starship
+  file:
+    url: https://github.com/starship/starship/releases/download/{{ .Version }}
+    src: starship-{{ .Arch }}-unknown-{{ .Os }}-gnu.tar.gz
+    binaryPath: "."
+    binary: starship
+    mode: archive
+  checksum:
+    check: true
+    url: https://github.com/starship/starship/releases/download/{{ .Version }}
+    file: starship-{{ .Arch }}-unknown-{{ .Os }}-gnu.tar.gz.sha256
+    format: sha256
+  available:
+    os:
+      linux: linux
+    arch:
+      amd64: x86_64
