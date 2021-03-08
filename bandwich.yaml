@@ -1,7 +1,7 @@
 apiVersion: release/v1
 kind: Release
 metadata:
-  name: bottom
+  name: bandwhich
   web: https://github.com/imsnif/bandwhich
 spec:
   repo:
