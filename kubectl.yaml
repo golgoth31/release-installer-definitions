@@ -1,0 +1,26 @@
+apiVersion: release/v1
+kind: Release
+metadata:
+  name: kubectl
+  web: https://github.com/kubernetes/kubectl
+spec:
+  repo:
+    type: github
+    name: kubernetes
+    owner: kubernetes
+  file:
+    url: https://dl.k8s.io/release/{{ .Version }}/bin/linux/amd64
+    src: kubectl
+    binaryPath: "."
+    binary: kubectl
+    mode: file
+  checksum:
+    check: false
+    url: ""
+    file: checksums.txt
+    format: sha256
+  available:
+    os:
+      linux: linux
+    arch:
+      amd64: x86_64
