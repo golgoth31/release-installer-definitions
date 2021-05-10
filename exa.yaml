@@ -10,10 +10,9 @@ spec:
     owner: ogham
   file:
     url: https://github.com/ogham/exa/releases/download/{{ .Version }}
-    src: exa-{{ .Os }}-{{ .Arch }}-{{ trimPrefix "v" .Version }}.zip
-    binaryPath: "."
-    binary: exa-{{ .Os }}-{{ .Arch }}
-    link: exa
+    src: exa-{{ .Os }}-{{ .Arch }}-{{ .Version }}.zip
+    binaryPath: "bin"
+    binary: exa
     mode: archive
   checksum:
     check: false
