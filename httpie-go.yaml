@@ -1,0 +1,26 @@
+apiVersion: release/v1
+kind: Release
+metadata:
+  name: httpie-go
+  web: https://github.com/nojima/httpie-go
+spec:
+  repo:
+    type: github
+    name: httpie-go
+    owner: nojima
+  file:
+    url: https://github.com/nojima/httpie-go/releases/download/{{ .Version }}
+    src: httpie-go_{{ .Os }}_{{ .Arch }}
+    binaryPath: .
+    binary: ht
+    mode: file
+  checksum:
+    check: false
+    url: https://github.com/nojima/httpie-go/releases/download/{{ .Version }}
+    file: checksums.txt
+    format: sha256
+  available:
+    os:
+      linux: linux
+    arch:
+      amd64: amd64
