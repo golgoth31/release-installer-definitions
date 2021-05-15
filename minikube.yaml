@@ -1,0 +1,26 @@
+apiVersion: release/v1
+kind: Release
+metadata:
+  name: minikube
+  web: https://minikube.sigs.k8s.io/
+spec:
+  repo:
+    type: github
+    name: minikube
+    owner: kubernetes
+  file:
+    url: https://github.com/kubernetes/minikube/releases/download/{{ .Version }}
+    src: minikube-{{ .Os }}-{{ .Arch }}
+    binaryPath: "."
+    binary: minikube
+    mode: file
+  checksum:
+    check: true
+    url: https://github.com/kubernetes/minikube/releases/download/{{ .Version }}
+    file: minikube-{{ .Os }}-{{ .Arch }}.sha256
+    format: sha256
+  available:
+    os:
+      linux: linux
+    arch:
+      amd64: amd64
