@@ -1,0 +1,26 @@
+apiVersion: release/v1
+kind: Release
+metadata:
+  name: fluxcd
+  web: https://fluxcd.io/
+spec:
+  repo:
+    type: github
+    name: flux2
+    owner: fluxcd
+  file:
+    url: https://github.com/fluxcd/flux2/releases/download/{{ .Version }}
+    src: flux_{{ trimPrefix "v" .Version }}_{{ .Os }}_{{ .Arch }}.tar.gz
+    binaryPath: "."
+    binary: flux
+    mode: archive
+  checksum:
+    check: true
+    url: https://github.com/fluxcd/flux2/releases/download/{{ .Version }}
+    file: flux_0.13.4_checksums.txt
+    format: sha256
+  available:
+    os:
+      linux: linux
+    arch:
+      amd64: amd64
