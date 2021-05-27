@@ -1,0 +1,27 @@
+apiVersion: release/v1
+kind: Release
+metadata:
+  name: sops
+  web: https://github.com/mozilla/sops
+spec:
+  repo:
+    type: github
+    name: sops
+    owner: mozilla
+  file:
+    url: https://github.com/mozilla/sops/releases/download/{{ .Version }}
+    src: sops-{{ .Version }}.{{ .Arch }}
+    binaryPath: "."
+    binary: sops
+    mode: file
+  checksum:
+    check: false
+  available:
+    os:
+      linux: linux
+      darwin: darwin
+      windows: windows
+    arch:
+      amd64: amd64
+      i386: "386"
+      arm64: arm64
