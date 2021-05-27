@@ -10,7 +10,7 @@ spec:
     owner: mozilla
   file:
     url: https://github.com/mozilla/sops/releases/download/{{ .Version }}
-    src: sops-{{ .Version }}.{{ .Arch }}
+    src: sops-{{ .Version }}.{{ .Os }}
     binaryPath: "."
     binary: sops
     mode: file
