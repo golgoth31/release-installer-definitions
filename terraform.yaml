@@ -9,14 +9,14 @@ spec:
     name: terraform
     owner: hashicorp
   file:
-    url: https://releases.hashicorp.com/terraform/{{ .Version }}
+    url: https://releases.hashicorp.com/terraform/{{ trimPrefix "v" .Version }}
     src: terraform_{{ trimPrefix "v" .Version }}_{{ .Os }}_{{ .Arch }}.zip
     binaryPath: "."
     binary: terraform
     mode: archive
   checksum:
     check: true
-    url: https://releases.hashicorp.com/terraform/{{ .Version }}
+    url: https://releases.hashicorp.com/terraform/{{ trimPrefix "v" .Version }}
     file: terraform_{{ trimPrefix "v" .Version }}_SHA256SUMS
     format: sha256
   available:
