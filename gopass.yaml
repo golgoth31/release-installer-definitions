@@ -1,0 +1,29 @@
+apiVersion: release/v1
+kind: Release
+metadata:
+  name: gopass
+  web: https://github.com/gopasspw/gopass
+spec:
+  repo:
+    type: github
+    name: gopass
+    owner: gopasspw
+  file:
+    url: https://github.com/gopasspw/gopass/{{ .Version }}
+    src: gopass-{{ trimPrefix "v" .Version }}-{{ .Os }}-{{ .Arch }}.tar.gz
+    binaryPath: "."
+    binary: gopass
+    mode: archive
+  checksum:
+    check: true
+    url: https://github.com/gopasspw/gopass/{{ .Version }}
+    file: gopass_{{ trimPrefix "v" .Version }}_SHA256SUMS
+    format: sha256
+  available:
+    os:
+      linux: linux
+      darwin: darwin
+      windows: windows
+    arch:
+      amd64: amd64
+      arm64: arm64
