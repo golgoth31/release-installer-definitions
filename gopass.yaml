@@ -9,14 +9,14 @@ spec:
     name: gopass
     owner: gopasspw
   file:
-    url: https://github.com/gopasspw/gopass/{{ .Version }}
+    url: https://github.com/gopasspw/gopass/releases/download/{{ .Version }}
     src: gopass-{{ trimPrefix "v" .Version }}-{{ .Os }}-{{ .Arch }}.tar.gz
     binaryPath: "."
     binary: gopass
     mode: archive
   checksum:
     check: true
-    url: https://github.com/gopasspw/gopass/{{ .Version }}
+    url: https://github.com/gopasspw/gopass/releases/download/{{ .Version }}
     file: gopass_{{ trimPrefix "v" .Version }}_SHA256SUMS
     format: sha256
   available:
