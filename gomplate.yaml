@@ -15,7 +15,7 @@ spec:
     binary: gomplate
     mode: file
   checksum:
-    check: true
+    check: false
     url: https://github.com/hairyhenderson/gomplate/releases/download/{{ .Version }}
     file: checksums-{{ .Version }}_sha512.txt
     format: sha512
