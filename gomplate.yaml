@@ -1,0 +1,26 @@
+apiVersion: release/v1
+kind: Release
+metadata:
+  name: gomplate
+  web: https://gomplate.ca/
+spec:
+  repo:
+    type: github
+    name: gomplate
+    owner: hairyhenderson
+  file:
+    url: https://github.com/hairyhenderson/gomplate/releases/download/{{ .Version }}
+    src: gomplate_{{ .Os }}-{{ .Arch }}
+    binaryPath: "."
+    binary: gomplate
+    mode: file
+  checksum:
+    check: true
+    url: https://github.com/hairyhenderson/gomplate/releases/download/{{ .Version }}
+    file: checksums-{{ .Version }}_sha512.txt
+    format: sha512
+  available:
+    os:
+      linux: linux
+    arch:
+      amd64: amd64
