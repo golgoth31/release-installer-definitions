@@ -1,0 +1,30 @@
+apiVersion: release/v1
+kind: Release
+metadata:
+  name: hugo
+  web: https://gohugo.io
+spec:
+  repo:
+    type: github
+    name: hugo
+    owner: gohugoio
+  file:
+    url: https://github.com/gohugoio/hugo/releases/download/{{ .Version }}
+    src: hugo_{{ trimPrefix "v" .Version }}_{{ .Os }}-{{ .Arch }}.tar.gz
+    binaryPath: "."
+    binary: hugo
+    mode: archive
+  checksum:
+    check: true
+    url: https://github.com/gohugoio/hugo/releases/download/{{ .Version }}
+    file: hugo_{{ trimPrefix "v" .Version }}_checksums.txt
+    format: sha256
+  available:
+    os:
+      linux: Linux
+      darwin: Darwin
+      windows: Windows
+    arch:
+      amd64: 64bit
+      i386: 32bit
+      arm64: ARM64
