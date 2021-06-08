@@ -1,0 +1,29 @@
+apiVersion: release/v1
+kind: Release
+metadata:
+  name: velero
+  web: https://velero.io
+spec:
+  repo:
+    type: github
+    name: velero
+    owner: vmware-tanzu
+  file:
+    url: https://github.com/vmware-tanzu/velero/releases/download/{{ .Version }}
+    src: velero-{{ .Version }}-{{ .Os }}-{{ .Arch }}.tar.gz
+    binaryPath: "."
+    binary: velero
+    mode: archive
+  checksum:
+    check: true
+    url: https://github.com/vmware-tanzu/velero/releases/download/{{ .Version }}
+    file: CHECKSUM
+    format: sha256
+  available:
+    os:
+      linux: linux
+      darwin: darwin
+      windows: windows
+    arch:
+      amd64: amd64
+      arm64: arm64
