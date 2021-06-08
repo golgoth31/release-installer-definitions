@@ -11,7 +11,7 @@ spec:
   file:
     url: https://github.com/vmware-tanzu/velero/releases/download/{{ .Version }}
     src: velero-{{ .Version }}-{{ .Os }}-{{ .Arch }}.tar.gz
-    binaryPath: "."
+    binaryPath: "velero-{{ .Version }}-{{ .Os }}-{{ .Arch }}"
     binary: velero
     mode: archive
   checksum:
