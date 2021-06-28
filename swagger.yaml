@@ -1,0 +1,30 @@
+apiVersion: release/v1
+kind: Release
+metadata:
+  name: swagger
+  web: https://goswagger.io/
+spec:
+  repo:
+    type: github
+    name: go-swagger
+    owner: go-swagger
+  file:
+    url: https://github.com/go-swagger/go-swagger/releases/download/{{ .Version }}
+    src: swagger_{{ .Os }}_{{ .Arch }}
+    binaryPath: "."
+    binary: swagger
+    mode: file
+  checksum:
+    check: true
+    url: https://github.com/go-swagger/go-swagger/releases/download/{{ .Version }}
+    file: sha256sum.txt
+    format: sha256
+  available:
+    os:
+      linux: linux
+      darwin: darwin
+      windows: windows
+    arch:
+      amd64: amd64
+      i386: "386"
+      arm64: arm64
