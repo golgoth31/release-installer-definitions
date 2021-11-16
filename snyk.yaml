@@ -10,14 +10,14 @@ spec:
     name: snyk
   file:
     url: https://github.com/snyk/snyk/releases/download/{{ .Version }}
-    src: snyk-{{ .OS }}
+    src: snyk-{{ .Os }}
     binaryPath: "."
     binary: snyk
     mode: file
   checksum:
     check: true
     url: https://github.com/snyk/snyk/releases/download/{{ .Version }}
-    file: snyk-{{ .OS }}.sha256
+    file: snyk-{{ .Os }}.sha256
     format: sha256
   available:
     os:
