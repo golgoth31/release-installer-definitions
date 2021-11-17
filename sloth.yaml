@@ -15,7 +15,7 @@ spec:
     binary: sloth
     mode: file
   checksum:
-    check: false
+    check: true
     url: https://github.com/slok/sloth/releases/download/{{ .Version }}
     file: checksums.txt
     format: sha256
