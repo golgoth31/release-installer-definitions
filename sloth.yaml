@@ -1,0 +1,26 @@
+apiVersion: release/v1
+kind: Release
+metadata:
+  name: sloth
+  web: https://github.com/slok/sloth
+spec:
+  repo:
+    type: github
+    name: sloth
+    owner: slok
+  file:
+    url: https://github.com/slok/sloth/releases/download/{{ .Version }}
+    src: sloth-{{ .Os }}-{{ .Arch }}
+    binaryPath: "."
+    binary: sloth
+    mode: file
+  checksum:
+    check: false
+    url: https://github.com/slok/sloth/releases/download/{{ .Version }}
+    file: checksums.txt
+    format: sha256
+  available:
+    os:
+      linux: linux
+    arch:
+      amd64: amd64
