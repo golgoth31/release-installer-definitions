@@ -1,0 +1,29 @@
+apiVersion: release/v1
+kind: Release
+metadata:
+  name: scaleway-cli
+  web: https://github.com/scaleway/scaleway-cli
+spec:
+  repo:
+    type: github
+    name: scaleway-cli
+    owner: scaleway
+  file:
+    url: https://github.com/scaleway/scaleway-cli/releases/download/{{ .Version }}
+    src: scw-{{ trimPrefix "v" .Version }}-{{ .Os }}-{{ .Arch }}
+    binaryPath: "."
+    binary: scw
+    mode: file
+  checksum:
+    check: true
+    url: https://github.com/scaleway/scaleway-cli/releases/download/{{ .Version }}
+    file: SHA256SUMS
+    format: sha256
+  available:
+    os:
+      linux: linux
+      darwin: darwin
+      windows: windows
+    arch:
+      amd64: x86_64
+      arm64: arm64
