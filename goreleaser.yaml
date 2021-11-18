@@ -17,7 +17,7 @@ spec:
   checksum:
     check: true
     url: https://github.com/goreleaser/goreleaser/releases/download/{{ .Version }}
-    file: goreleaser_checksums.txt
+    file: checksums.txt
     format: sha256
   available:
     os:
