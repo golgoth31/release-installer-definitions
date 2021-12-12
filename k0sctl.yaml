@@ -1,0 +1,29 @@
+apiVersion: release/v1
+kind: Release
+metadata:
+  name: k0sctl
+  web: https://github.com/k0sproject/k0sctl/releases/download/v0.11.4/k0sctl-linux-x64
+spec:
+  repo:
+    type: github
+    name: k0sctl
+    owner: k0sproject
+  file:
+    url: https://github.com/k0sproject/k0sctl/releases/download/{{ .Version }}
+    src: k0sctl-{{ .Os }}-{{ .Arch }}
+    binaryPath: "."
+    binary: k0sctl
+    mode: file
+  checksum:
+    check: true
+    url: https://github.com/k0sproject/k0sctl/releases/download/{{ .Version }}
+    file: k0sctl-{{ .Os }}-{{ .Arch }}.sha256
+    format: sha256
+  available:
+    os:
+      linux: linux
+      darwin: darwin
+      windows: win
+    arch:
+      amd64: x64
+      arm64: arm64
