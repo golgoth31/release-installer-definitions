@@ -1,0 +1,29 @@
+apiVersion: release/v1
+kind: Release
+metadata:
+  name: age
+  web: https://github.com/FiloSottile/age
+spec:
+  repo:
+    type: github
+    owner: FiloSottile
+    name: age
+  file:
+    url: https://github.com/FiloSottile/age/releases/download/{{ .Version }}
+    src: age-{{ .Version }}-{{ .Os }}-{{ .Arch }}.tar.gz
+    binaryPath: "."
+    binary: age
+    mode: archive
+  checksum:
+    check: false
+    url: https://github.com/FiloSottile/age/releases/download/{{ .Version }}
+    file: age-checksums.txt
+    format: sha256
+  available:
+    os:
+      linux: linux
+      darwin: darwin
+      windows: windows
+    arch:
+      amd64: amd64
+      arm64: arm64
