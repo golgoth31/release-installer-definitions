@@ -11,7 +11,7 @@ spec:
   file:
     url: https://github.com/FiloSottile/age/releases/download/{{ .Version }}
     src: age-{{ .Version }}-{{ .Os }}-{{ .Arch }}.tar.gz
-    binaryPath: "."
+    binaryPath: "age"
     binary: age
     mode: archive
   checksum:
