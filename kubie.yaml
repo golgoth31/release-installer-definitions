@@ -1,0 +1,28 @@
+apiVersion: release/v1
+kind: Release
+metadata:
+  name: kubie
+  web: https://github.com/sbstp/kubie
+spec:
+  repo:
+    type: github
+    owner: sbstp
+    name: kubie
+  file:
+    url: https://github.com/sbstp/kubie/releases/download/{{ .Version }}
+    src: kubie-{{ .Os }}-{{ .Arch }}
+    binaryPath: .
+    binary: age
+    mode: file
+  checksum:
+    check: false
+    url: https://github.com/sbstp/kubie/releases/download/{{ .Version }}
+    file: kubie-checksums.txt
+    format: sha256
+  available:
+    os:
+      linux: linux
+      darwin: darwin
+    arch:
+      amd64: amd64
+      arm64: arm64
