@@ -12,7 +12,7 @@ spec:
     url: https://github.com/sbstp/kubie/releases/download/{{ .Version }}
     src: kubie-{{ .Os }}-{{ .Arch }}
     binaryPath: .
-    binary: age
+    binary: kubie
     mode: file
   checksum:
     check: false
