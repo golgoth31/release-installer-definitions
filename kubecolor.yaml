@@ -1,0 +1,28 @@
+apiVersion: release/v1
+kind: Release
+metadata:
+  name: kubecolor
+  web: https://github.com/hidetatz/kubecolor/releases/download/v0.0.20/kubecolor_0.0.20_Linux_x86_64.tar.gz
+spec:
+  repo:
+    type: github
+    name: kubecolor
+    owner: hidetatz
+  file:
+    url: https://github.com/hidetatz/kubecolor/releases/download/{{ .Version }}
+    src: kubecolor_{{ trimPrefix "v" .Version }}_{{ .Os }}_{{ .Arch }}.tar.gz
+    binaryPath: "."
+    binary: kubecolor
+    mode: archive
+  checksum:
+    check: true
+    url: https://github.com/hidetatz/kubecolor/releases/download/{{ .Version }}
+    file: checksums.txt
+    format: sha256
+  available:
+    os:
+      linux: Linux
+      darwin: Darwin
+    arch:
+      amd64: x86_64
+      arm64: arm64
