@@ -17,7 +17,7 @@ spec:
   checksum:
     check: true
     url: https://github.com/k0sproject/k0sctl/releases/download/{{ .Version }}
-    file: k0sctl-{{ .Os }}-{{ .Arch }}.sha256
+    file: checksums.txt
     format: sha256
   available:
     os:
