@@ -11,7 +11,7 @@ spec:
   file:
     url: https://github.com/golangci/golangci-lint/releases/download/{{ .Version }}
     src: golangci-lint-{{ trimPrefix "v" .Version }}-{{ .Os }}-{{ .Arch }}.tar.gz
-    binaryPath: "."
+    binaryPath: golangci-lint-{{ trimPrefix "v" .Version }}-{{ .Os }}-{{ .Arch }}
     binary: golangci-lint
     mode: archive
   checksum:
