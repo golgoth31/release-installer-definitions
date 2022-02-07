@@ -17,7 +17,7 @@ spec:
   checksum:
     check: true
     url: https://github.com/fluxcd/flux2/releases/download/{{ .Version }}
-    file: flux_0.13.4_checksums.txt
+    file: flux_{{ trimPrefix "v" .Version }}_checksums.txt
     format: sha256
   available:
     os:
