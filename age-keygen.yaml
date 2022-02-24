@@ -1,7 +1,7 @@
 apiVersion: release/v1
 kind: Release
 metadata:
-  name: age
+  name: age-keygen
   web: https://github.com/FiloSottile/age
 spec:
   repo:
