@@ -20,8 +20,6 @@ spec:
     os:
       linux: linux
       darwin: darwin
-      windows: windows
     arch:
       amd64: amd64
       i386: "386"
-      arm64: arm64
