@@ -22,7 +22,7 @@ spec:
   available:
     os:
       linux: Linux
-      darwin: Darwin
+      darwin: macOS
       windows: Windows
     arch:
       amd64: 64bit
