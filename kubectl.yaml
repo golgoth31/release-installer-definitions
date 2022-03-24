@@ -9,7 +9,7 @@ spec:
     name: kubernetes
     owner: kubernetes
   file:
-    url: https://dl.k8s.io/release/{{ .Version }}/bin/linux/amd64
+    url: https://dl.k8s.io/release/{{ .Version }}/bin/{{ .Os }}/{{ .Arch }}
     src: kubectl
     binaryPath: "."
     binary: kubectl
@@ -22,5 +22,7 @@ spec:
   available:
     os:
       linux: linux
+      darwin: darwin
     arch:
-      amd64: x86_64
+      amd64: amd64
+      arm64: arm64
