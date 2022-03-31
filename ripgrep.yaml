@@ -10,8 +10,8 @@ spec:
     owner: BurntSushi
   file:
     url: https://github.com/BurntSushi/ripgrep/releases/download/{{ .Version }}
-    src: ripgrep-{{ .Version }}-{{ .Arch }}-unknown-{{ .Os }}-musl.tar.gz
-    binaryPath: "ripgrep-{{ .Version }}-{{ .Arch }}-unknown-{{ .Os }}-musl"
+    src: ripgrep-{{ .Version }}-{{ .Arch }}-{{ .Os }}.tar.gz
+    binaryPath: "ripgrep-{{ .Version }}-{{ .Arch }}-{{ .Os }}"
     binary: rg
     mode: archive
   checksum:
@@ -21,8 +21,7 @@ spec:
     format: sha256
   available:
     os:
-      linux: linux
-      darwin: darwin
+      linux: unknown-linux-musl
+      darwin: apple-darwin
     arch:
       amd64: x86_64
-      arm64: arm64
