@@ -10,8 +10,8 @@ spec:
     owner: sharkdp
   file:
     url: https://github.com/sharkdp/bat/releases/download/{{ .Version }}
-    src: bat-{{ .Version }}-{{ .Arch }}-unknown-{{ .Os }}-gnu.tar.gz
-    binaryPath: "bat-{{ .Version }}-{{ .Arch }}-unknown-{{ .Os }}-gnu"
+    src: bat-{{ .Version }}-{{ .Arch }}-{{ .Os }}.tar.gz
+    binaryPath: "bat-{{ .Version }}-{{ .Arch }}-{{ .Os }}"
     binary: bat
     mode: archive
   checksum:
@@ -21,6 +21,7 @@ spec:
     format: sha256
   available:
     os:
-      linux: linux
+      linux: unknown-linux-gnu
+      darwin: apple-darwin
     arch:
       amd64: x86_64
