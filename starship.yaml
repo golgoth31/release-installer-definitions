@@ -10,17 +10,18 @@ spec:
     owner: starship
   file:
     url: https://github.com/starship/starship/releases/download/{{ .Version }}
-    src: starship-{{ .Arch }}-unknown-{{ .Os }}-gnu.tar.gz
+    src: starship-{{ .Arch }}-{{ .Os }}.tar.gz
     binaryPath: "."
     binary: starship
     mode: archive
   checksum:
     check: true
     url: https://github.com/starship/starship/releases/download/{{ .Version }}
-    file: starship-{{ .Arch }}-unknown-{{ .Os }}-gnu.tar.gz.sha256
+    file: starship-{{ .Arch }}-{{ .Os }}.tar.gz.sha256
     format: sha256
   available:
     os:
-      linux: linux
+      linux: unknown-linux-gnu
+      darwin: apple-darwin
     arch:
       amd64: x86_64
