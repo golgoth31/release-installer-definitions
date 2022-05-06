@@ -1,0 +1,28 @@
+apiVersion: release/v1
+kind: Release
+metadata:
+  name: operator-sdk
+  web: https://github.com/operator-framework/operator-sdk
+spec:
+  repo:
+    type: github
+    name: operator-sdk
+    owner: operator-framework
+  file:
+    url: https://github.com/operator-framework/operator-sdk/releases/download/{{ .Version }}
+    src: operator-sdk_{{ .Os }}_{{ .Arch }}
+    binaryPath: "."
+    binary: operator-sdk
+    mode: file
+  checksum:
+    check: true
+    url: https://github.com/operator-framework/operator-sdk/releases/download/{{ .Version }}
+    file: checksum.txt
+    format: sha256
+  available:
+    os:
+      linux: linux
+      darwin: darwin
+    arch:
+      amd64: amd64
+      arm64: arm64
