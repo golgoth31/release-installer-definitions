@@ -22,5 +22,7 @@ spec:
   available:
     os:
       linux: linux
+      darwin: osx
     arch:
       amd64: amd64
+      arm64: arm64
