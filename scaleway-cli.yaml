@@ -25,5 +25,5 @@ spec:
       darwin: darwin
       windows: windows
     arch:
-      amd64: x86_64
+      amd64: amd64
       arm64: arm64
