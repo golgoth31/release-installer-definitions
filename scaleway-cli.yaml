@@ -10,7 +10,7 @@ spec:
     owner: scaleway
   file:
     url: https://github.com/scaleway/scaleway-cli/releases/download/{{ .Version }}
-    src: scw-{{ trimPrefix "v" .Version }}-{{ .Os }}-{{ .Arch }}
+    src: scaleway-cli_{{ trimPrefix "v" .Version }}_{{ .Os }}_{{ .Arch }}
     binaryPath: "."
     binary: scw
     mode: file

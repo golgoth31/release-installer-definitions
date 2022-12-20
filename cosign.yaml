@@ -1,0 +1,29 @@
+apiVersion: release/v1
+kind: Release
+metadata:
+  name: cosign
+  web: https://github.com/sigstore/cosign
+spec:
+  repo:
+    type: github
+    name: cosign
+    owner: sigstore
+  file:
+    url: https://github.com/sigstore/cosign/releases/download/{{ .Version }}
+    src: cosign-{{ .Os }}-{{ .Arch }}
+    binaryPath: "."
+    binary: cosign
+    mode: file
+  checksum:
+    check: true
+    url: https://github.com/sigstore/cosign/releases/download/{{ .Version }}
+    file: cosign_checksums.txt
+    format: sha256
+  available:
+    os:
+      linux: linux
+      darwin: darwin
+      windows: windows
+    arch:
+      amd64: amd64
+      arm64: arm64
