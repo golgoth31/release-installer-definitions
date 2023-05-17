@@ -6,7 +6,7 @@ metadata:
 spec:
   repo:
     type: github
-    name: cilium
+    name: cilium-cli
     owner: cilium
   file:
     url: https://github.com/cilium/cilium-cli/releases/download/{{ .Version }}
