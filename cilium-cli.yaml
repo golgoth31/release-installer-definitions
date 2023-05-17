@@ -1,0 +1,30 @@
+apiVersion: release/v1
+kind: Release
+metadata:
+  name: cilium
+  web: https://cilium.io/
+spec:
+  repo:
+    type: github
+    name: cilium
+    owner: cilium
+  file:
+    url: https://github.com/cilium/cilium-cli/releases/download/{{ .Version }}
+    src: cilium-{{ .Os }}-{{ .Arch }}.tar.gz
+    binaryPath: "."
+    binary: cilium
+    mode: archive
+  checksum:
+    check: true
+    url: https://github.com/cilium/cilium-cli/releases/download/{{ .Version }}
+    file: cilium-{{ .Os }}-{{ .Arch }}.tar.gz.sha256sum
+    format: sha256
+  available:
+    os:
+      linux: linux
+      darwin: darwin
+      windows: windows
+    arch:
+      amd64: amd64
+      i386: "386"
+      arm64: arm64

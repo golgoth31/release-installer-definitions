@@ -1,0 +1,28 @@
+apiVersion: release/v1
+kind: Release
+metadata:
+  name: msk
+  web: https://github.com/golgoth31/multiShellKonfig
+spec:
+  repo:
+    type: github
+    name: multiShellKonfig
+    owner: golgoth31
+  file:
+    url: https://github.com/golgoth31/multiShellKonfig/releases/download/{{ .Version }}
+    src: msk-bin_{{ .Version }}_{{ .Os }}_{{ .Arch }}
+    binaryPath: "."
+    binary: msk-bin
+    mode: file
+  checksum:
+    check: true
+    url: https://github.com/golgoth31/multiShellKonfig/releases/download/{{ .Version }}
+    file: msk-bin_{{ .Version }}_SHA256SUMS.txt
+    format: sha256
+  available:
+    os:
+      linux: linux
+      darwin: darwin
+    arch:
+      amd64: amd64
+      arm64: arm64
