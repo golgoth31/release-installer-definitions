@@ -1,0 +1,28 @@
+apiVersion: release/v1
+kind: Release
+metadata:
+  name: pulumi
+  web: https://www.pulumi.com/
+spec:
+  repo:
+    type: github
+    name: pulumi
+    owner: pulumi
+  file:
+    url: https://github.com/pulumi/pulumi/releases/download/{{ .Version }}
+    src: pulumi-{{ .Version }}-{{ .Os }}-{{ .Arch }}.tar.gz
+    binaryPath: "pulumi"
+    binary: pulumi
+    mode: archive
+  checksum:
+    check: true
+    url: https://github.com/pulumi/pulumi/releases/download/{{ .Version }}
+    file: pulumi-{{ trimPrefix "v" .Version }}-checksums.txt
+    format: sha256
+  available:
+    os:
+      linux: linux
+      darwin: darwin
+    arch:
+      amd64: x64
+      arm64: arm64
