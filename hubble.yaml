@@ -1,0 +1,30 @@
+apiVersion: release/v1
+kind: Release
+metadata:
+  name: hubble
+  web: https://cilium.io/
+spec:
+  repo:
+    type: github
+    name: hubble
+    owner: cilium
+  file:
+    url: https://github.com/cilium/hubble/releases/download/{{ .Version }}
+    src: hubble-{{ .Os }}-{{ .Arch }}.tar.gz
+    binaryPath: "."
+    binary: hubble
+    mode: archive
+  checksum:
+    check: true
+    url: https://github.com/cilium/hubble/releases/download/{{ .Version }}
+    file: hubble-{{ .Os }}-{{ .Arch }}.tar.gz.sha256sum
+    format: sha256
+  available:
+    os:
+      linux: linux
+      darwin: darwin
+      windows: windows
+    arch:
+      amd64: amd64
+      i386: "386"
+      arm64: arm64
