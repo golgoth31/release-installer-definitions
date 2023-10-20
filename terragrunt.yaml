@@ -1,0 +1,30 @@
+apiVersion: release/v1
+kind: Release
+metadata:
+  name: terragrunt
+  web: https://terragrunt.gruntwork.io/
+spec:
+  repo:
+    type: github
+    name: terragrunt
+    owner: gruntwork-io
+  file:
+    url: https://github.com/gruntwork-io/terragrunt/releases/download/{{ .Version }}
+    src: terragrunt_{{ .Os }}_{{ .Arch }}
+    binaryPath: "."
+    binary: terragrunt
+    mode: file
+  checksum:
+    check: true
+    url: https://github.com/gruntwork-io/terragrunt/releases/download/{{ .Version }}
+    file: SHA256SUMS
+    format: sha256
+  available:
+    os:
+      linux: linux
+      darwin: darwin
+      windows: windows
+    arch:
+      amd64: amd64
+      i386: "386"
+      arm64: arm64
