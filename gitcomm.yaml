@@ -2,24 +2,27 @@ apiVersion: release/v1
 kind: Release
 metadata:
   name: gitcomm
-  web: https://github.com/karantin2020/gitcomm
+  web: https://github.com/golgoth31/gitcomm
 spec:
   repo:
     type: github
     name: gitcomm
-    owner: karantin2020
+    owner: golgoth31
   file:
-    url: https://github.com/karantin2020/gitcomm/releases/download/{{ .Version }}
-    src: gitcomm_{{ .Os }}_{{ .Arch }}
+    url: https://github.com/golgoth31/gitcomm/releases/download/{{ .Version }}
+    src: gitcomm_{{ .Version }}_{{ .Os }}_{{ .Arch }}
     binaryPath: "."
     binary: gitcomm
     mode: file
   checksum:
-    check: false
+    check: true
+    url: https://github.com/golgoth31/gitcomm/releases/download/{{ .Version }}
+    file: gitcomm_SHA256SUMS.txt
+    format: sha256
   available:
     os:
       linux: linux
       darwin: darwin
     arch:
       amd64: amd64
-      i386: "386"
+      arm64: arm64
