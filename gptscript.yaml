@@ -16,7 +16,7 @@ spec:
     mode: archive
   checksum:
     check: true
-    url: https://github.com/cilium/cilium-cli/releases/download/{{ .Version }}
+    url: https://github.com/gptscript-ai/gptscript/releases/download/{{ .Version }}
     file: checksums.txt
     format: sha256
   available:
