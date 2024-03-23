@@ -6,8 +6,8 @@ metadata:
 spec:
   repo:
     type: github
-    name: gitcomm
-    owner: golgoth31
+    name: dagger
+    owner: dagger
   file:
     url: https://github.com/dagger/dagger/releases/download/{{ .Version }}
     src: dagger_{{ .Version }}_{{ .Os }}_{{ .Arch }}.tar.gz
