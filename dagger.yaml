@@ -1,0 +1,28 @@
+apiVersion: release/v1
+kind: Release
+metadata:
+  name: dagger
+  web: https://dagger.io/
+spec:
+  repo:
+    type: github
+    name: gitcomm
+    owner: golgoth31
+  file:
+    url: https://github.com/dagger/dagger/releases/download/{{ .Version }}
+    src: dagger_{{ .Version }}_{{ .Os }}_{{ .Arch }}.tar.gz
+    binaryPath: "."
+    binary: dagger
+    mode: archive
+  checksum:
+    check: true
+    url: https://github.com/dagger/dagger/releases/download/{{ .Version }}
+    file: checksums.txt
+    format: sha256
+  available:
+    os:
+      linux: linux
+      darwin: darwin
+    arch:
+      amd64: amd64
+      arm64: arm64
